@@ -6,9 +6,22 @@
     <title>Appareils Photo</title>
   </head>
   <body>
-    <h1>Nos Appareils Photo</h1>
-    <div id="product"></div>
+    <div class="ui container">
+      <!-- Navigation Menu -->
+      <div class="ui four item inverted orange menu">
+        <div class="header item">
+          <i class="money bill alternate outline icon"></i>
+          <h1>Nos Appareils Photo</h1>
+        </div>
+        <a class="item" href="/"> Currency Rates </a>
+        <a class="item" href="/exchange"> Exchange Rates </a>
+        <a class="item" href="/historical"> Historical Rates </a>
+      </div>
 
-    <script type="module" src="js/script.js"></script>
+      <!-- Application Root -->
+      <div id="app"></div>
+    </div>
+    <script src="js/fetcher.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
