@@ -21,9 +21,17 @@ function showProduct(productId, data) {
 
   app.appendChild(element);
 
-  element.querySelector(".addButton").addEventListener("click", function (event) {
-    const productId = event.target.getAttribute("data-id");
-    cartList.push(productId);
-    console.log(cartList);
+  element.querySelector(".addButton").addEventListener("click", () => {
+    addToCart(product);
   });
+}
+
+function addToCart(product) {
+  const myList = cartList.filter((data) => data.product.id === product.id);
+  if (myList.length === 0) {
+    cartList.push({ product, number: 1 });
+    // return; (on peut utiliser le return à la place du else)
+  } else {
+    myList[0].number++;
+  }
 }
