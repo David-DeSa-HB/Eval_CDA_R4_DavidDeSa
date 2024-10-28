@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
   } else if (title === "Product List") {
     fetchProducts(displayProductList);
   } else if (title === "Cart") {
-    displayCart();
+    fetchProducts(displayCart);
   } else if (title.startsWith("Produit: ")) {
     const productId = title.split("Produit: ")[1];
     fetchProducts((data) => showProduct(productId, data));
@@ -26,7 +26,7 @@ document.getElementById("products-btn").addEventListener("click", () => {
 
 document.getElementById("cart-btn").addEventListener("click", () => {
   title = "Cart";
-  displayCart();
+  fetchProducts(displayCart);
 });
 
 function goBack() {

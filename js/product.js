@@ -1,7 +1,10 @@
 function showProduct(productId, data) {
   document.title = "Produit: " + productId;
   const product = data.find((product) => product.id == productId);
-  const element = document.getElementById("app");
+  const app = document.getElementById("app");
+  app.innerHTML = "";
+
+  const element = document.createElement("div");
   element.innerHTML = `
             <h2>Product Details</h2>
             <h3>${product.nom_produit}</h3>
@@ -16,11 +19,11 @@ function showProduct(productId, data) {
             <button onclick="goBack()">Reviens !</button>
         `;
 
-  document.getElementById("app").appendChild(element);
+  app.appendChild(element);
 
   element.querySelector(".addButton").addEventListener("click", function (event) {
     const productId = event.target.getAttribute("data-id");
     cartList.push(productId);
-    addToCart(product);
+    console.log(cartList);
   });
 }

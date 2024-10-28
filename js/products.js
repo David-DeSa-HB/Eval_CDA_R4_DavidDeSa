@@ -1,6 +1,6 @@
 function displayProductList(data) {
-  const element = document.getElementById("app");
-  element.innerHTML = "";
+  const app = document.getElementById("app");
+  app.innerHTML = "";
 
   data.forEach((product) => {
     const element = document.createElement("div");
