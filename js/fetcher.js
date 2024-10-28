@@ -1,14 +1,15 @@
 const request = new Request("produits.json");
-let FakeID = 0;
+let fakeID = 0;
 
 function fetchProducts(callback) {
   fetch(request)
     .then((response) => response.json())
     .then((data) => {
+      fakeID = 0;
       data.forEach((product) => {
-        product.id = FakeID++;
+        product.id = fakeID++;
       });
-      callback(data); // Pass the data to the callback function
+      callback(data);
     })
     .catch((error) => console.error("Error fetching JSON files:", error));
 }
