@@ -1,7 +1,9 @@
 function displayCart(data) {
-  element = document.getElementById("app");
-  element.className= "app-cart";
-  element.innerHTML = `
+  const app = document.getElementById("app");
+  app.className= "app-cart";
+  app.innerHTML = "";
+
+  app.innerHTML = `
   
           <h2 class="machin">Panier</h2>
 
@@ -30,7 +32,7 @@ function displayCart(data) {
 
               `;
 
-  element.querySelectorAll(".substractButton").forEach((button) => {
+  app.querySelectorAll(".substractButton").forEach((button) => {
     button.addEventListener("click", function (event) {
       const productId = event.currentTarget.getAttribute("data-id");
       const product = data.filter((product) => product.id === productId * 1)[0];
@@ -39,7 +41,7 @@ function displayCart(data) {
     });
   });
 
-  element.querySelectorAll(".removeButton").forEach((button) => {
+  app.querySelectorAll(".removeButton").forEach((button) => {
     button.addEventListener("click", function (event) {
       const productId = event.currentTarget.getAttribute("data-id");
       const product = data.filter((product) => product.id === productId * 1)[0];
@@ -48,7 +50,7 @@ function displayCart(data) {
     });
   });
 
-  element.querySelectorAll(".addButton").forEach((button) => {
+  app.querySelectorAll(".addButton").forEach((button) => {
     button.addEventListener("click", function (event) {
       const productId = event.currentTarget.getAttribute("data-id");
       const product = data.filter((product) => product.id === productId * 1)[0];

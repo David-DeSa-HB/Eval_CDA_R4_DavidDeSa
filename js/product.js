@@ -3,7 +3,8 @@ function showProduct(productId, data) {
   const product = data.find((product) => product.id == productId);
   const app = document.getElementById("app");
   app.className= "app-product";
-  app.innerHTML = "";
+  // app.innerHTML = "";
+  app.innerHTML = `<h2 class="machin">${product.nom_produit}</h2>`;
 
   const element = document.createElement("div");
   element.className= "card-box";

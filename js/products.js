@@ -1,7 +1,8 @@
 function displayProductList(data) {
   const app = document.getElementById("app");
   app.className= "app-home";
-  app.innerHTML = "";
+  // app.innerHTML = "";
+  app.innerHTML = `<h2 class="machin">Produits</h2>`;
 
   data.forEach((product) => {
     const element = document.createElement("div");

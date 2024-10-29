@@ -1,7 +1,8 @@
 function displayRandomList(data) {
   const app = document.getElementById("app");
   app.className= "app-home";
-  app.innerHTML = "";
+  // app.innerHTML = "";
+  app.innerHTML = `<h2 class="machin">Accueil</h2>`;
 
   const shuffledData = data.sort(() => 0.5 - Math.random());
   const selectedData = shuffledData.slice(0, 3);

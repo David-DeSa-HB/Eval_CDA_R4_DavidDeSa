@@ -8,7 +8,7 @@
 }
 
 *{
-  outline: solid 1px red;
+  /* outline: solid 1px red; */
   margin: 0;
   padding: 0;
 }
@@ -33,7 +33,7 @@ img{
 
 .topnav{
   border-bottom: 1px var(--primary-color-light) solid;
-  
+
 }
 
 #app {
