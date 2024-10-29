@@ -1,29 +1,35 @@
 function displayCart(data) {
   element = document.getElementById("app");
+  element.className= "app-cart";
   console.log(cartList);
   element.innerHTML = `
-          <h2>Panier</h2>
+  
+          <h2 class="machin">Panier</h2>
 
           ${cartList
             .map((dataCart) => {
               const product = dataCart.product;
               return `
-            <div>
+            <div class="card-box">
               <h3>${product.nom_produit}</h3>
               <p>Prix: ${product.prix}</p>
               <p>Nombre: x${dataCart.number}</p>
               <img src="${product.image}" alt="${product.nom_produit}">
-              <button class="substractButton" data-id="${product.id}">J'en veux moins !</button>
-              <button class="addButton" data-id="${product.id}">J'en veux plus !</button>
-              <button class="removeButton" data-id="${product.id}">Je ne veux plus de ça !</button>
+              <div id="cart-buttons">
+                <button class="substractButton" data-id="${product.id}">J'en veux moins !</button>
+                <button class="addButton" data-id="${product.id}">J'en veux plus !</button>
+                <button class="removeButton" data-id="${product.id}">Je ne veux plus de ça !</button>
+              </div>
             </div>`;
             })
             .join("")}
 
-            <button onclick="goBack()">Reviens !</button>
+            <button class="machin" onclick="goBack()">Reviens !</button>
             
             ${cartList.length >0 ? `
-              <button onclick="showValidationPage()">Je veux payer maintenant !</button>` : ``}`;
+              <button class="machin" onclick="showValidationPage()">Je veux payer maintenant !</button>` : ``}
+
+              `;
 
   element.querySelectorAll(".substractButton").forEach((button) => {
     button.addEventListener("click", function (event) {

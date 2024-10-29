@@ -1,5 +1,6 @@
 function displayRandomList(data) {
   const app = document.getElementById("app");
+  app.className= "app-home";
   app.innerHTML = "";
 
   const shuffledData = data.sort(() => 0.5 - Math.random());
@@ -7,7 +8,9 @@ function displayRandomList(data) {
 
   selectedData.forEach((product) => {
     const element = document.createElement("div");
+    element.className= "card-box";
     element.innerHTML = `
+                <img src="${product.image}" alt="${product.nom_produit}">
                 <h3>${product.nom_produit}</h3>
                 <p>FakeID: ${product.id}</p>
                 <p>Description: ${product.descriptif}</p>
@@ -16,7 +19,7 @@ function displayRandomList(data) {
                 <p>Connectivité: ${product.caracteristiques.connectivité}</p>
                 <p>Ecran: ${product.caracteristiques.écran}</p>
                 <p>Prix: ${product.prix}</p>
-                <img src="${product.image}" alt="${product.nom_produit}">
+                
                 <button class="showButton" data-id="${product.id}">Regarde moi!</button>
             `;
     app.appendChild(element);
