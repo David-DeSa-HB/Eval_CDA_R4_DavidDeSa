@@ -2,6 +2,7 @@ let cartList = [];
 let title = (document.title = "Product List");
 
 window.addEventListener("load", () => {
+  cartList=getCart();
   if (title === "Home") {
     fetchProducts(displayRandomList);
   } else if (title === "Product List") {
@@ -33,3 +34,13 @@ function goBack() {
   title = "Product List";
   fetchProducts(displayProductList);
 }
+
+function storeCart(){
+  localStorage.setItem("cartList", JSON.stringify(cartList));
+}
+
+function getCart(){
+  const local = localStorage.getItem("cartList");
+  return local ? JSON.parse(local) : [];
+}
+

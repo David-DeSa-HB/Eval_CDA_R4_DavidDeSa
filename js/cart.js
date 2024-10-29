@@ -1,7 +1,6 @@
 function displayCart(data) {
   element = document.getElementById("app");
   element.className= "app-cart";
-  console.log(cartList);
   element.innerHTML = `
   
           <h2 class="machin">Panier</h2>
@@ -57,11 +56,14 @@ function displayCart(data) {
       displayCart(data);
     });
   });
+  storeCart();
+}
 
 function substractFromCart(product) {
   const myList = cartList.filter((data) => data.product.id === product.id);
   if (myList[0].number > 1) {
     myList[0].number--;
+    storeCart();
   } else {
     removeFromCart(product);
   }
@@ -69,5 +71,5 @@ function substractFromCart(product) {
 
 function removeFromCart(product) {
     cartList = cartList.filter((productCart) => product.id != productCart.product.id);
-}
+    storeCart();
 }
