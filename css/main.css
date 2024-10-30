@@ -58,7 +58,9 @@ img{
   }
 }
 
+.product-box{
 
+}
 .card-box {
   padding: 3px;
   background-color: whitesmoke;
@@ -99,18 +101,7 @@ img{
   }
 }
 
-input{
-  background-color: var(--primary-color);
-  color: var(--primary-color-light);
-  border-radius: 1em;
-  padding: 0.1em 0.3em;
-  &:invalid{
-      border: 2px solid var(--danger-color);
-  }
-  &:valid{
-      border: 2px solid var(--validation-color);
-  }
-}
+
 
 .message {
   margin: 10px 0;

@@ -43,4 +43,3 @@ function getCart(){
   const local = localStorage.getItem("cartList");
   return local ? JSON.parse(local) : [];
 }
-

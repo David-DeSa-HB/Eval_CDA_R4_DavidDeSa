@@ -2,10 +2,18 @@ function showValidationPage(){
   document.title = "validation"
 
   const app = document.getElementById("app");
+  app.className = "validation";
   app.innerHTML = "";
 
   const element = document.createElement("div");
   element.innerHTML = `
+    <div>
+    ${cartList.reduce((sum, item)=> {
+            return sum+(item.prix*item.number)}
+            , 0
+        )};
+    </div>
+
     <form name="reserve" action="index.html" method="get" id="form-inscription">
         <div class="formData">
             <label>Prénom</label>

@@ -25,6 +25,13 @@ function displayCart(data) {
             })
             .join("")}
 
+          <div>
+            Total: ${cartList.reduce((sum, product)=> {
+            return sum+(product.prix*product.number)}
+            , 0
+            )};
+          </div>
+
             <button class="machin" onclick="goBack()">Reviens !</button>
             
             ${cartList.length >0 ? `
