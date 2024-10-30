@@ -1,5 +1,5 @@
 let cartList = [];
-let title = (document.title = "Product List");
+let title = (document.title = "Home");
 
 window.addEventListener("load", () => {
   cartList=getCart();

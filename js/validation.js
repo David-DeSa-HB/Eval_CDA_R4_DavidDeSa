@@ -1,20 +1,15 @@
 function showValidationPage(){
   document.title = "validation"
 
+  const validationForm = document.getElementById("validationForm");
   const app = document.getElementById("app");
   app.className = "validation";
   app.innerHTML = "";
 
   const element = document.createElement("div");
   element.innerHTML = `
-    <div>
-    ${cartList.reduce((sum, item)=> {
-            return sum+(item.prix*item.number)}
-            , 0
-        )};
-    </div>
 
-    <form name="reserve" action="index.html" method="get" id="form-inscription">
+    <form id="validationForm" name="reserve" action="index.html" method="get" id="form-pay">
         <div class="formData">
             <label>Prénom</label>
             <br />
@@ -63,7 +58,7 @@ function showValidationPage(){
             <input class="checkbox-input" type="checkbox" id="checkbox2" />
             <label class="checkbox2-label" for="checkbox2">
                 <span class="checkbox-icon"></span>
-                Je souhaite être prévenu des prochains évènements.
+                Je souhaite recevoir des emails commerciaux sur les nouveautés du site.
             </label>
             <br />
         </div>
@@ -75,4 +70,13 @@ function showValidationPage(){
     </form>
   `
   app.appendChild(element);
+
+  validationForm.addEventListener("submit", event => {
+    const contactForm = document.getElementById('contactForm');
+    const formMail = document.getElementById('formMail');
+    const formSubject = document.getElementById('formSubject');
+    const formContent = document.getElementById('formContent');
+    event.preventDefault();
+    alert("Placeholder")
+    removeFromCart()});
 }

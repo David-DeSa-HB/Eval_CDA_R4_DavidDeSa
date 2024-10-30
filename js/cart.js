@@ -27,9 +27,9 @@ function displayCart(data) {
 
           <div>
             Total: ${cartList.reduce((sum, product)=> {
-            return sum+(product.prix*product.number)}
+            return sum+(parseFloat(product.product.prix)*product.number)}
             , 0
-            )};
+            )}€
           </div>
 
             <button class="machin" onclick="goBack()">Reviens !</button>
